@@ -33,7 +33,7 @@ export default function Home() {
     <main className=" bg-blue-400 flex min-h-screen flex-col justify-between p-24">
       <Navbar />
       <h1>Central Asia</h1>
-      <p>Merges Complete</p>
+      <p>Merges Complete FIX</p>
       <div className="flex flex-row justify-center">
         {tourData.map((tour, index) => {
           return (
