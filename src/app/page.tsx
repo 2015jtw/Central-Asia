@@ -1,7 +1,6 @@
-import HomepageCarousel from "@/components/homepage-carousel";
-import Navbar from "@/components/navbar";
-import TourCard from "@/components/tourCard";
 import Header from "@/components/Header";
+import HomepageCarousel from "@/components/homepage-carousel";
+import TourCard from "@/components/tourCard";
 
 export default function Home() {
 	// TODO: refactor this in a data file and just map over it
