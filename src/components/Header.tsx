@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -12,13 +13,18 @@ const Header = () => {
 	};
 
 	return (
-		<header className="bg-white shadow-sm">
+		<header className="bg-white shadow-sm top-0">
 			<nav
-				className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+				className="mx-auto top-0 flex max-w-[80rem] items-center justify-between p-6 lg:px-8"
 				aria-label="Global"
 			>
 				<div className="flex lg:flex-1">
-					<Link href="/" className="-m-1.5 p-1.5">
+					<ScrollLink
+						to="homepage-carousel"
+						smooth={true}
+						duration={500}
+						className="-m-1.5 p-1.5 cursor-pointer"
+					>
 						<span className="sr-only">Your Company</span>
 						<Image
 							className="h-8 w-auto"
@@ -27,72 +33,88 @@ const Header = () => {
 							width={80}
 							height={80}
 						/>
-					</Link>
+					</ScrollLink>
 				</div>
 				<div className="flex lg:hidden">
-					<button
-						type="button"
-						className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-						onClick={toggleMenu}
-					>
-						<span className="sr-only">Open main menu</span>
-						<svg
-							className="h-6 w-6"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="1.5"
-							stroke="currentColor"
-							aria-hidden="true"
+					{!isOpen && (
+						<button
+							type="button"
+							className="-m-2.5 cursor-pointer z-20 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+							onClick={toggleMenu}
 						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-							/>
-						</svg>
-					</button>
+							<span className="sr-only">Open main menu</span>
+							<svg
+								className="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth="1.5"
+								stroke="currentColor"
+								aria-hidden="true"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+								/>
+							</svg>
+						</button>
+					)}
 				</div>
-				{/* TODO: Link these to their respective components being rendered on the homepage */}
+
 				<div className="hidden lg:flex lg:gap-x-12">
-					<Link
-						href="/tours"
-						className="text-sm font-semibold leading-6 text-gray-900"
+					<ScrollLink
+						to="tours"
+						smooth={true}
+						duration={500}
+						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
 					>
 						Tours
-					</Link>
-					<Link
-						href="/about-us"
-						className="text-sm font-semibold leading-6 text-gray-900"
+					</ScrollLink>
+
+					<ScrollLink
+						to="about-us"
+						smooth={true}
+						duration={500}
+						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
 					>
 						About Us
-					</Link>
-					<Link
-						href="/uzbekistan"
-						className="text-sm font-semibold leading-6 text-gray-900"
+					</ScrollLink>
+					<ScrollLink
+						to="uzbekistan"
+						smooth={true}
+						duration={500}
+						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
 					>
 						Uzbekistan
-					</Link>
+					</ScrollLink>
 				</div>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
-					<a
-						href="/contact-us"
-						className="text-sm font-semibold leading-6 text-gray-900"
+					<ScrollLink
+						to="contact-us"
+						smooth={true}
+						duration={500}
+						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
 					>
 						Contact Us
-					</a>
+					</ScrollLink>
 				</div>
 			</nav>
 
-			{/* Mobile menu, show/hide based on menu open state. */}
+			{/* MOBILE MENU, show/hide based on menu open state. */}
 			<div
 				className={`lg:hidden ${isOpen ? "" : "hidden"}`}
 				role="dialog"
 				aria-modal="true"
 			>
-				<div className="fixed inset-0 z-10"></div>
-				<div className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+				<div className="fixed inset-0"></div>
+				<div className="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 					<div className="flex items-center justify-between">
-						<a href="#" className="-m-1.5 p-1.5">
+						<ScrollLink
+							to="homepage-carousel"
+							smooth={true}
+							duration={500}
+							className="-m-1.5 p-1.5 cursor-pointer"
+						>
 							<span className="sr-only">Your Company</span>
 							<Image
 								className="h-8 w-auto"
@@ -101,7 +123,7 @@ const Header = () => {
 								height={80}
 								alt="Central Asia Logo"
 							/>
-						</a>
+						</ScrollLink>
 						<button
 							type="button"
 							className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -112,13 +134,13 @@ const Header = () => {
 								className="h-6 w-6"
 								fill="none"
 								viewBox="0 0 24 24"
-								stroke-width="1.5"
+								strokeWidth="1.5"
 								stroke="currentColor"
 								aria-hidden="true"
 							>
 								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
+									strokeLinecap="round"
+									strokeLinejoin="round"
 									d="M6 18L18 6M6 6l12 12"
 								/>
 							</svg>
@@ -127,32 +149,49 @@ const Header = () => {
 					<div className="mt-6 flow-root">
 						<div className="-my-6 divide-y divide-gray-500/10">
 							<div className="space-y-2 py-6">
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								<ScrollLink
+									to="homepage-carousel"
+									smooth={true}
+									duration={500}
+									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+								>
+									Home
+								</ScrollLink>
+								<ScrollLink
+									to="tours"
+									smooth={true}
+									duration={500}
+									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Tours
-								</a>
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								</ScrollLink>
+
+								<ScrollLink
+									to="about-us"
+									smooth={true}
+									duration={500}
+									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									About Us
-								</a>
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								</ScrollLink>
+								<ScrollLink
+									to="uzbekistan"
+									smooth={true}
+									duration={500}
+									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Uzbekistan
-								</a>
+								</ScrollLink>
 							</div>
 							<div className="py-6">
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+								<ScrollLink
+									to="contact-us"
+									smooth={true}
+									duration={500}
+									className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Contact Us
-								</a>
+								</ScrollLink>
 							</div>
 						</div>
 					</div>

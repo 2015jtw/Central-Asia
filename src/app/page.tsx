@@ -34,14 +34,20 @@ export default function Home() {
 	return (
 		<main className="bg-white flex min-h-screen flex-col">
 			<Header />
+
 			<HomepageCarousel
 				heading="Welcome to Central Asia Tours"
 				description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui
 						irure qui lorem cupidatat commodo. Elit sunt amet fugiat
 						veniam occaecat fugiat aliqua."
 			/>
-			<div className=" text-black flex flex-col items-center p-8">
-				<h1 className=" text-4xl font-semibold pb-4 ">Central Asia</h1>
+			<div
+				id="tours"
+				className="text-black flex flex-col items-center p-8"
+			>
+				<h1 className=" text-4xl font-semibold pb-4 ">
+					Central Asia Tours
+				</h1>
 				<div className="flex flex-col lg:flex-row justify-center">
 					{tourData.map((tour, index) => {
 						return (
