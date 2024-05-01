@@ -63,10 +63,18 @@ const Header = () => {
 
 				<div className="hidden lg:flex lg:gap-x-12">
 					<ScrollLink
+						to="home"
+						smooth={true}
+						duration={500}
+						className="text-sm leading-6 text-gray-900 cursor-pointer"
+					>
+						Home
+					</ScrollLink>
+					<ScrollLink
 						to="tours"
 						smooth={true}
 						duration={500}
-						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
+						className="text-sm leading-6 text-gray-900 cursor-pointer"
 					>
 						Tours
 					</ScrollLink>
@@ -75,7 +83,7 @@ const Header = () => {
 						to="about-us"
 						smooth={true}
 						duration={500}
-						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
+						className="text-sm leading-6 text-gray-900 cursor-pointer"
 					>
 						About Us
 					</ScrollLink>
@@ -83,7 +91,7 @@ const Header = () => {
 						to="uzbekistan"
 						smooth={true}
 						duration={500}
-						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
+						className="text-sm  leading-6 text-gray-900 cursor-pointer"
 					>
 						Uzbekistan
 					</ScrollLink>
@@ -93,7 +101,7 @@ const Header = () => {
 						to="contact-us"
 						smooth={true}
 						duration={500}
-						className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer"
+						className="text-sm  leading-6 text-gray-900 cursor-pointer"
 					>
 						Contact Us
 					</ScrollLink>
@@ -153,7 +161,7 @@ const Header = () => {
 									to="homepage-carousel"
 									smooth={true}
 									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Home
 								</ScrollLink>
@@ -161,7 +169,7 @@ const Header = () => {
 									to="tours"
 									smooth={true}
 									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Tours
 								</ScrollLink>
@@ -170,7 +178,7 @@ const Header = () => {
 									to="about-us"
 									smooth={true}
 									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									About Us
 								</ScrollLink>
@@ -178,7 +186,7 @@ const Header = () => {
 									to="uzbekistan"
 									smooth={true}
 									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Uzbekistan
 								</ScrollLink>
@@ -188,7 +196,7 @@ const Header = () => {
 									to="contact-us"
 									smooth={true}
 									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+									className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
 									Contact Us
 								</ScrollLink>

@@ -24,13 +24,6 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
 						objectPosition="center"
 						alt="Uzbekistan at sunset"
 					/>
-					{/* <Image
-						src="/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg"
-						layout="fill"
-						objectFit="cover"
-						objectPosition="center"
-						alt="Uzbekistan at sunset"
-					/> */}
 				</div>
 
 				<div className="relative mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
