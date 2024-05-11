@@ -35,6 +35,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
 	return (
 		<div
 			className="relative isolate flex items-center justify-center h-[600px]"
+			id="homepage-carousel"
 		>
 			<Image
 				src="/tim-de-groot-yNGQ830uFB4-unsplash.jpg"
@@ -43,7 +44,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
 				objectFit="cover"
 			/>
 			<div className="mx-auto max-w-4xl w-full">
-				<div className="relative px-10 md:px-0 max-w-2xl">
+				<div className="relative mx-auto px-10 md:px-0 max-w-2xl">
 					<div className="text-center">
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{props.heading}

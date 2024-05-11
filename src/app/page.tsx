@@ -70,32 +70,32 @@ export default function Home() {
     }
 
     // TODO: refactor this in a data file and just map over it
-    const tourData = [
-        {
-            title: 'Khiva',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-            description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-            time: 'September 1st - 7th',
-            price: 100,
-        },
-        {
-            title: 'BuKhara',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-            description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-            time: 'September 1st - 7th',
-            price: 100,
-        },
-        {
-            title: 'Samarkand',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-            description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-            time: 'September 1st - 7th',
-            price: 100,
-        },
-    ];
+    // const tourData = [
+    //     {
+    //         title: 'Khiva',
+    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+    //         description:
+    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
+    //         time: 'September 1st - 7th',
+    //         price: 100,
+    //     },
+    //     {
+    //         title: 'BuKhara',
+    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+    //         description:
+    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
+    //         time: 'September 1st - 7th',
+    //         price: 100,
+    //     },
+    //     {
+    //         title: 'Samarkand',
+    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+    //         description:
+    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
+    //         time: 'September 1st - 7th',
+    //         price: 100,
+    //     },
+    // ];
 
     return (
         <main className="bg-white flex flex-col">
@@ -106,6 +106,10 @@ export default function Home() {
             />
 
             <Wrapper>
+
+                <div id="central-asia" className=' bg-yellow-300 text-black h-[500px]'>
+
+                </div>
                 <div
                     id="tours"
                     className="text-black flex flex-col items-center p-8"
@@ -113,7 +117,7 @@ export default function Home() {
                     <h1 className=" text-4xl font-semibold pb-4 ">
                         Central Asia Tours
                     </h1>
-                    <div className="flex flex-col overflow-hidden lg:flex-row justify-center">
+                    {/* <div className="flex flex-col overflow-hidden lg:flex-row justify-center">
                         {tourData.map((tour, index) => {
                             return (
                                 <TourCard
@@ -126,7 +130,7 @@ export default function Home() {
                                 />
                             );
                         })}
-                    </div>
+                    </div> */}
                 </div>
 
                 <Form {...form}>
@@ -136,6 +140,7 @@ export default function Home() {
                             className="max-w-2xl mx-auto my-4 w-full flex flex-col gap-4"
                             id="contact-form"
                         >
+                            <h1 className="text-3xl text-center">Contact Us to Book a Tour</h1>
                             <div className="flex flex-col md:flex-row gap-4">
                                 <FormField
                                     name="firstName"

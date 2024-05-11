@@ -63,12 +63,12 @@ const Header = () => {
 
 				<div className="hidden lg:flex lg:gap-x-12">
 					<ScrollLink
-						to="home"
+						to="central-asia"
 						smooth={true}
 						duration={500}
 						className="text-sm leading-6 text-gray-900 cursor-pointer"
 					>
-						Home
+						Central Asia
 					</ScrollLink>
 					<ScrollLink
 						to="tours"
@@ -87,18 +87,11 @@ const Header = () => {
 					>
 						About Us
 					</ScrollLink>
-					<ScrollLink
-						to="uzbekistan"
-						smooth={true}
-						duration={500}
-						className="text-sm  leading-6 text-gray-900 cursor-pointer"
-					>
-						Uzbekistan
-					</ScrollLink>
+					
 				</div>
 				<div className="hidden lg:flex lg:flex-1 lg:justify-end">
 					<ScrollLink
-						to="contact-us"
+						to="contact-form"
 						smooth={true}
 						duration={500}
 						className="text-sm  leading-6 text-gray-900 cursor-pointer"
@@ -158,12 +151,12 @@ const Header = () => {
 						<div className="-my-6 divide-y divide-gray-500/10">
 							<div className="space-y-2 py-6">
 								<ScrollLink
-									to="homepage-carousel"
+									to="central-asia"
 									smooth={true}
 									duration={500}
 									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
 								>
-									Home
+									Central Asia
 								</ScrollLink>
 								<ScrollLink
 									to="tours"
@@ -182,18 +175,11 @@ const Header = () => {
 								>
 									About Us
 								</ScrollLink>
-								<ScrollLink
-									to="uzbekistan"
-									smooth={true}
-									duration={500}
-									className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
-								>
-									Uzbekistan
-								</ScrollLink>
+								
 							</div>
 							<div className="py-6">
 								<ScrollLink
-									to="contact-us"
+									to="contact-form"
 									smooth={true}
 									duration={500}
 									className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
