@@ -1,76 +1,67 @@
 import Home from "@/app/page";
 import React from "react";
 import Image from "next/image";
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Scroll } from "lucide-react";
+
 
 interface HomepageCarouselProps {
 	heading: string;
 	description: string;
+	cta: string;
 }
 
+<ScrollLink
+	to="homepage-carousel"
+	smooth={true}
+	duration={500}
+	className="-m-1.5 p-1.5 cursor-pointer"
+>
+	<span className="sr-only">Your Company</span>
+	<Image
+		className="h-8 w-auto"
+		src="/camel-icon.png"
+		alt="Central Asia Logo"
+		width={80}
+		height={80}
+	/>
+</ScrollLink>
+
 const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
-	const carouselItems = [
-		{
-			alt: "Khiva",
-			image: "https://images.unsplash.com/photo-1576947183671-91a4d4caa386?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		},
-		{
-			alt: "BuKhara",
-			image: "https://images.unsplash.com/photo-1626553726949-5a8f5abfc56a?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		},
-		{
-			alt: "Samarkand",
-			image: "https://plus.unsplash.com/premium_photo-1694475434330-2058f3323def?q=80&w=2203&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-		},
-	];
+	
 	return (
 		<div
-			id="homepage-carousel"
-			className="relative isolate px-6 pt-14 lg:px-8 bg-gradient-to-r from-[#DE3C4B] to-[#E28413]"
+			className="relative isolate flex items-center justify-center h-[600px]"
 		>
-			<div className="mx-auto max-w-2xl pb-16 ">
-				<div className="relative mx-auto max-w-2xl pb-16">
+			<Image
+				src="/tim-de-groot-yNGQ830uFB4-unsplash.jpg"
+				alt="Uzbekistan"
+				fill
+				objectFit="cover"
+			/>
+			<div className="mx-auto max-w-4xl w-full">
+				<div className="relative px-10 md:px-0 max-w-2xl">
 					<div className="text-center">
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
 							{props.heading}
 						</h1>
-						<p className="mt-6 text-lg leading-8 text-white">
+						<p className="my-6 text-lg leading-8 text-white">
 							{props.description}
 						</p>
+						<Button>
+							<ScrollLink
+								to="contact-form"
+								smooth={true}
+								duration={500}
+								className="underline-offset-4 hover:underline"
+							>
+								{props.cta}
+							</ScrollLink>
+						</Button>
 					</div>
-				</div>
-				<div className="flex items-center justify-center">
-					<Carousel className="w-full max-w-[800px] mx-0">
-						<CarouselContent>
-							{carouselItems.map((item, index) => (
-								<CarouselItem key={index}>
-									<div className="p-1">
-										<Card>
-											<CardContent className="flex flex-col aspect-square items-center justify-center p-6">
-												<Image
-													src={item.image}
-													height={400}
-													width={400}
-													objectFit="cover"
-													objectPosition="center"
-													alt={item.alt}
-												/>
-											</CardContent>
-										</Card>
-									</div>
-								</CarouselItem>
-							))}
-						</CarouselContent>
-						<CarouselPrevious />
-						<CarouselNext />
-					</Carousel>
 				</div>
 			</div>
 		</div>

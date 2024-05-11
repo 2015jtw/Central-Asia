@@ -98,12 +98,11 @@ export default function Home() {
     ];
 
     return (
-        <main className="bg-white flex h-[500px] flex-col">
+        <main className="bg-white flex flex-col">
             <HomepageCarousel
-                heading="Welcome to Central Asia Tours"
-                description="Anim aute id magna aliqua ad ad non deserunt sunt. Qui
-						irure qui lorem cupidatat commodo. Elit sunt amet fugiat
-						veniam occaecat fugiat aliqua."
+                heading="Book a Tour"
+                description="Come explore the best that Uzbekistan has to offer with our expert guides. We offer tours to Khiva, Bukhara, and Samarkand. Book now to secure your spot!"
+                cta="Get in touch"
             />
 
             <Wrapper>
@@ -135,6 +134,7 @@ export default function Home() {
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
                             className="max-w-2xl mx-auto my-4 w-full flex flex-col gap-4"
+                            id="contact-form"
                         >
                             <div className="flex flex-col md:flex-row gap-4">
                                 <FormField
