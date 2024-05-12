@@ -16,6 +16,7 @@ import {
     FormMessage,
     FormControl,
 } from '@/components/ui/form';
+import ImageWithText from '@/components/ImageWithText';
 
 // form dependencies
 import { z } from 'zod';
@@ -70,32 +71,26 @@ export default function Home() {
     }
 
     // TODO: refactor this in a data file and just map over it
-    // const tourData = [
-    //     {
-    //         title: 'Khiva',
-    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-    //         description:
-    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-    //         time: 'September 1st - 7th',
-    //         price: 100,
-    //     },
-    //     {
-    //         title: 'BuKhara',
-    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-    //         description:
-    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-    //         time: 'September 1st - 7th',
-    //         price: 100,
-    //     },
-    //     {
-    //         title: 'Samarkand',
-    //         image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
-    //         description:
-    //             'Uzbekistan remains the most-visited country in Central Asia for one key reason.',
-    //         time: 'September 1st - 7th',
-    //         price: 100,
-    //     },
-    // ];
+    const tourData = [
+        {
+            title: 'Khiva',
+            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            description:
+                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+        },
+        {
+            title: 'BuKhara',
+            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            description:
+                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+        },
+        {
+            title: 'Samarkand',
+            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            description:
+                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+        },
+    ];
 
     return (
         <main className="bg-white flex flex-col">
@@ -107,30 +102,33 @@ export default function Home() {
 
             <Wrapper>
 
-                <div id="central-asia" className=' bg-yellow-300 text-black h-[500px]'>
-
+                <div id="central-asia" className='flex flex-col justify-center items-center bg-yellow-300 text-black h-[500px]'>
+                    <h3 className='text-3xl'>Journey through Central Asia</h3>
+                    <h1 className='text-5xl py-4'>Uzbekistan</h1>
+                    <p className="text-base max-w-3xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ipsa quaerat aperiam repellendus commodi impedit eveniet, iste officia laboriosam provident, facilis esse! Dolores odit cum facere perspiciatis maxime deserunt eveniet?</p>
                 </div>
+
                 <div
                     id="tours"
                     className="text-black flex flex-col items-center p-8"
                 >
-                    <h1 className=" text-4xl font-semibold pb-4 ">
+                    <h1 className="text-4xl font-semibold pb-4 ">
                         Central Asia Tours
                     </h1>
-                    {/* <div className="flex flex-col overflow-hidden lg:flex-row justify-center">
+                    <div className="flex flex-col gap-4 w-full">
                         {tourData.map((tour, index) => {
                             return (
-                                <TourCard
+                                <ImageWithText
                                     key={index}
-                                    title={tour.title}
                                     image={tour.image}
+                                    title={tour.title}
                                     description={tour.description}
-                                    time={tour.time}
-                                    price={tour.price}
+                                    swap={index % 2 === 0}
                                 />
-                            );
+                            )
                         })}
-                    </div> */}
+                    </div>
+
                 </div>
 
                 <Form {...form}>
