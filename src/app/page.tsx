@@ -74,21 +74,21 @@ export default function Home() {
     const tourData = [
         {
             title: 'Khiva',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            image: '/khiva.jpg',
             description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+                'Khiva is a city of approximately 50,000 people located in Xorazm Province, Uzbekistan. It is the former capital of Khwarezmia and the Khanate of Khiva. Itchan Kala in Khiva was the first site in Uzbekistan to be inscribed in the World Heritage List (1991).',
         },
         {
             title: 'BuKhara',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            image: '/bukhara.jpg',
             description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+                'Bukhara is a city in Uzbekistan, Central Asia. It was a prominent stop on the Silk Road trade route between the East and the West, and a major medieval center for Islamic theology and culture. It is the capital of the Bukhara Region of Uzbekistan. The region of Bukhara was a part of the Persian Empire for a long time. The origin of many of its current inhabitants goes back to the period of Aryan',
         },
         {
             title: 'Samarkand',
-            image: '/jonathan-greenaway-HDK1NstWkcI-unsplash.jpg',
+            image: '/samarkand.jpg',
             description:
-                'Uzbekistan remains the most-visited country in Central Asia for one key reason.'
+                'Samarkand is a city in southeastern Uzbekistan and one of the oldest inhabited cities in Central Asia. There are many historical and architectural sites in the city. The most famous of these is the Registan, a public square in the heart of the city, where three madrasahs of distinctive Islamic architecture are arranged around a plaza. The three madrasahs are: the Ulugh Beg Madrasah (15th century), the Tilya-Kori Madrasah (17th century), and the Sher-Dor Madrasah (17th century).',
         },
     ];
 
@@ -101,21 +101,27 @@ export default function Home() {
             />
 
             <Wrapper>
-
-                <div id="central-asia" className='flex flex-col justify-center items-center bg-yellow-300 text-black h-[500px]'>
-                    <h3 className='text-3xl'>Journey through Central Asia</h3>
-                    <h1 className='text-5xl py-4'>Uzbekistan</h1>
-                    <p className="text-base max-w-3xl text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ipsa quaerat aperiam repellendus commodi impedit eveniet, iste officia laboriosam provident, facilis esse! Dolores odit cum facere perspiciatis maxime deserunt eveniet?</p>
+                <div
+                    id="central-asia"
+                    className="flex flex-col justify-center items-center bg-yellow-300 text-black h-[500px]"
+                >
+                    <h3 className="text-3xl">Journey through Central Asia</h3>
+                    <h1 className="text-5xl py-4">Uzbekistan</h1>
+                    <p className="text-base max-w-3xl text-center">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Cumque ipsa quaerat aperiam repellendus commodi
+                        impedit eveniet, iste officia laboriosam provident,
+                        facilis esse! Dolores odit cum facere perspiciatis
+                        maxime deserunt eveniet?
+                    </p>
                 </div>
 
                 <div
                     id="tours"
-                    className="text-black flex flex-col items-center p-8"
+                    className="text-black flex flex-col items-center py-8"
                 >
-                    <h1 className="text-4xl font-semibold pb-4 ">
-                        Central Asia Tours
-                    </h1>
-                    <div className="flex flex-col gap-4 w-full">
+                    <h1 className="text-4xl">Our Tours</h1>
+                    <div className="flex flex-col gap-30 w-full">
                         {tourData.map((tour, index) => {
                             return (
                                 <ImageWithText
@@ -125,10 +131,9 @@ export default function Home() {
                                     description={tour.description}
                                     swap={index % 2 === 0}
                                 />
-                            )
+                            );
                         })}
                     </div>
-
                 </div>
 
                 <Form {...form}>
@@ -138,7 +143,9 @@ export default function Home() {
                             className="max-w-2xl mx-auto my-4 w-full flex flex-col gap-4"
                             id="contact-form"
                         >
-                            <h1 className="text-3xl text-center">Contact Us to Book a Tour</h1>
+                            <h1 className="text-3xl text-center">
+                                Contact Us to Book a Tour
+                            </h1>
                             <div className="flex flex-col md:flex-row gap-4">
                                 <FormField
                                     name="firstName"
