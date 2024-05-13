@@ -1,6 +1,6 @@
 'use client';
 
-//import shadcn components
+//import shadcn/regular components
 import Header from '@/components/Header';
 import HomepageCarousel from '@/components/homepage-carousel';
 import TourCard from '@/components/tourCard';
@@ -17,6 +17,7 @@ import {
     FormControl,
 } from '@/components/ui/form';
 import ImageWithText from '@/components/ImageWithText';
+import CentralAsia from '@/components/CentralAsia';
 
 // form dependencies
 import { z } from 'zod';
@@ -99,23 +100,8 @@ export default function Home() {
                 description="Come explore the best that Uzbekistan has to offer with our expert guides. We offer tours to Khiva, Bukhara, and Samarkand. Book now to secure your spot!"
                 cta="Get in touch"
             />
-
+            <CentralAsia />
             <Wrapper>
-                <div
-                    id="central-asia"
-                    className="flex flex-col justify-center items-center bg-yellow-300 text-black h-[500px]"
-                >
-                    <h3 className="text-3xl">Journey through Central Asia</h3>
-                    <h1 className="text-5xl py-4">Uzbekistan</h1>
-                    <p className="text-base max-w-3xl text-center">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Cumque ipsa quaerat aperiam repellendus commodi
-                        impedit eveniet, iste officia laboriosam provident,
-                        facilis esse! Dolores odit cum facere perspiciatis
-                        maxime deserunt eveniet?
-                    </p>
-                </div>
-
                 <div
                     id="tours"
                     className="text-black flex flex-col items-center py-8"
@@ -243,8 +229,6 @@ export default function Home() {
                         </div>
                     )}
                 </Form>
-
-                <div className="mt-5 h-[800px] bg-red-500"></div>
             </Wrapper>
         </main>
     );

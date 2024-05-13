@@ -32,8 +32,12 @@ const ImageWithText = ({
             </div>
 
             <div className={`w-full mt-4 md:mt-0 `}>
-                <h2 className="md:px-10 text-2xl font-bold mb-2">{title}</h2>
-                <p className="md:px-10">{description}</p>
+                {/* <h2 className="md:px-10 text-3xl font-bold mb-2">{title}</h2>
+                <p className="md:px-10">{description}</p> */}
+                <h2 className="md:px-10 text-4xl sm:text-2xl font-bold mb-2">
+                    {title}
+                </h2>
+                <p className="md:px-10 text-lg sm:text-sm">{description}</p>
             </div>
         </div>
     );
