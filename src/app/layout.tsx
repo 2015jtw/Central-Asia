@@ -3,8 +3,7 @@ import { Inter, Fira_Sans } from 'next/font/google';
 import Head from 'next/head';
 import './globals.css';
 import Header from '@/components/Header';
-
-// const inter = Inter({ subsets: ["latin"] });
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
     title: 'Central Asia Tours',
@@ -30,6 +29,7 @@ export default function RootLayout({
             >
                 <Header />
                 {children}
+                <Footer/>
             </body>
         </html>
     );
