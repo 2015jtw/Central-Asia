@@ -19,7 +19,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="md:text-center md:mt-0">
+            <div className="container my-4 text-center">
                 <p>&copy; {new Date().getFullYear()} Central Asia Tours GmbH. All rights reserved.</p>
             </div>
         </footer>

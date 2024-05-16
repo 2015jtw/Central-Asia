@@ -127,111 +127,114 @@ export default function Home() {
             <AboutUs />
             <Form {...form}>
                 <div className="bg-gradient-to-r from-yellow-300 to-orange-500">
-                    {!isSubmitted ? (
-                        <form
-                            onSubmit={form.handleSubmit(onSubmit)}
-                            className="max-w-2xl mx-auto my-4 w-full flex flex-col gap-4 my-12"
-                            id="contact-form"
-                        >
-                            <h1 className="text-3xl text-center">
-                                Contact Us to Book a Tour
-                            </h1>
-                            <div className="flex flex-col md:flex-row gap-4">
-                                <FormField
-                                    name="firstName"
-                                    control={form.control}
-                                    render={({ field }) => {
-                                        return (
+                    <Wrapper>
+                        {!isSubmitted ? (
+                            <form
+                                onSubmit={form.handleSubmit(onSubmit)}
+                                className="max-w-2xl mx-auto w-full flex flex-col gap-4 my-12"
+                                id="contact-form"
+                            >
+                                <h1 className="text-3xl text-center">
+                                    Contact Us to Book a Tour
+                                </h1>
+                                <div className="flex flex-col md:flex-row gap-4">
+                                    <FormField
+                                        name="firstName"
+                                        control={form.control}
+                                        render={({ field }) => {
+                                            return (
+                                                <FormItem className="flex-1">
+                                                    <FormLabel>
+                                                        First Name
+                                                    </FormLabel>
+                                                    <FormControl>
+                                                        <Input
+                                                            {...field}
+                                                            placeholder="First Name"
+                                                            type="text"
+                                                        />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            );
+                                        }}
+                                    />
+
+                                    <FormField
+                                        name="lastName"
+                                        control={form.control}
+                                        render={({ field }) => (
                                             <FormItem className="flex-1">
-                                                <FormLabel>
-                                                    First Name
-                                                </FormLabel>
+                                                <FormLabel>Last Name</FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         {...field}
-                                                        placeholder="First Name"
+                                                        placeholder="Last Name"
                                                         type="text"
                                                     />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
-                                        );
-                                    }}
-                                />
+                                        )}
+                                    />
+                                </div>
 
                                 <FormField
-                                    name="lastName"
+                                    name="email"
                                     control={form.control}
                                     render={({ field }) => (
-                                        <FormItem className="flex-1">
-                                            <FormLabel>Last Name</FormLabel>
+                                        <FormItem>
+                                            <FormLabel>Email Address</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     {...field}
-                                                    placeholder="Last Name"
-                                                    type="text"
+                                                    placeholder="Email Address"
+                                                    type="email"
                                                 />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
+
+                                <FormField
+                                    name="message"
+                                    control={form.control}
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Message</FormLabel>
+                                            <FormControl>
+                                                <Textarea
+                                                    rows={5}
+                                                    {...field}
+                                                    placeholder="Message"
+                                                />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <Button type="submit" className="w-full">
+                                    Submit
+                                </Button>
+                            </form>
+                        ) : (
+                            <div className="flex flex-col items-center justify-center gap-4">
+                                <h1 className="text-3xl">
+                                    Thank you for your submission!
+                                </h1>
+                                <Button
+                                    onClick={() => {
+                                        setIsSubmitted(false);
+                                        form.reset();
+                                    }}
+                                >
+                                    Submit another form
+                                </Button>
                             </div>
-
-                            <FormField
-                                name="email"
-                                control={form.control}
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Email Address</FormLabel>
-                                        <FormControl>
-                                            <Input
-                                                {...field}
-                                                placeholder="Email Address"
-                                                type="email"
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-
-                            <FormField
-                                name="message"
-                                control={form.control}
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>Message</FormLabel>
-                                        <FormControl>
-                                            <Textarea
-                                                rows={5}
-                                                {...field}
-                                                placeholder="Message"
-                                            />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <Button type="submit" className="w-full">
-                                Submit
-                            </Button>
-                        </form>
-                    ) : (
-                        <div className="flex flex-col items-center justify-center gap-4">
-                            <h1 className="text-3xl">
-                                Thank you for your submission!
-                            </h1>
-                            <Button
-                                onClick={() => {
-                                    setIsSubmitted(false);
-                                    form.reset();
-                                }}
-                            >
-                                Submit another form
-                            </Button>
-                        </div>
-                    )}
+                        )}
+                    </Wrapper>
+                    
                 </div>
             </Form>
         </main>
