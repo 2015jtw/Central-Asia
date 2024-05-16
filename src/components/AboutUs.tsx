@@ -5,7 +5,7 @@ const AboutUs = () => {
     return (
         <>
             {/* DESKTOP VERSION */}
-            <section className="hidden md:block relative my-20" id="about-us">
+            <section className="hidden md:block relative mt-20" id="about-us">
                 <div className="relative h-[900px] md:h-[750px] w-full">
                     <Image
                         src="/uzbek-map-1.png"

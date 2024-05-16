@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/form';
 import ImageWithText from '@/components/ImageWithText';
 import CentralAsia from '@/components/CentralAsia';
+import Brands from '@/components/Brands';
 
 // form dependencies
 import { z } from 'zod';
@@ -125,6 +126,7 @@ export default function Home() {
                 </div>
             </Wrapper>
             <AboutUs />
+            <Brands />
             <Form {...form}>
                 <div className="bg-gradient-to-r from-yellow-300 to-orange-500">
                     <Wrapper>
