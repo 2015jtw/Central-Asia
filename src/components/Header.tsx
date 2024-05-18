@@ -88,7 +88,7 @@ const Header = () => {
             duration={500}
             className="text-sm leading-6 text-gray-900 cursor-pointer"
           >
-            {t("aboutUs")}
+            {t("AboutUs")}
           </ScrollLink>
           <ScrollLink
             to="contact-form"
@@ -176,7 +176,7 @@ const Header = () => {
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                 >
-                  {t("aboutUs")}
+                  {t("AboutUs")}
                 </ScrollLink>
                 <ScrollLink
                   to="contact-form"
