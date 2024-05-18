@@ -30,6 +30,7 @@ import emailjs from "emailjs-com";
 import { useState } from "react";
 import Image from "next/image";
 import AboutUs from "@/components/AboutUs";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -41,6 +42,10 @@ const formSchema = z.object({
 emailjs.init("RpIH6mlkgSGMUpMPK");
 
 export default function Home() {
+  const k = useTranslations("Khiva");
+  const b = useTranslations("Bukhara");
+  const s = useTranslations("Samarkand");
+  const t = useTranslations("ContactForm");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -68,25 +73,21 @@ export default function Home() {
       );
   }
 
-  // TODO: refactor this in a data file and just map over it
   const tourData = [
     {
-      title: "Khiva",
+      title: k("title"),
       image: "/khiva.jpg",
-      description:
-        "Khiva is a city of approximately 50,000 people located in Xorazm Province, Uzbekistan. It is the former capital of Khwarezmia and the Khanate of Khiva. Itchan Kala in Khiva was the first site in Uzbekistan to be inscribed in the World Heritage List (1991).",
+      description: k("description"),
     },
     {
-      title: "BuKhara",
+      title: b("title"),
       image: "/bukhara.jpg",
-      description:
-        "Bukhara is a city in Uzbekistan, Central Asia. It was a prominent stop on the Silk Road trade route between the East and the West, and a major medieval center for Islamic theology and culture. It is the capital of the Bukhara Region of Uzbekistan. The region of Bukhara was a part of the Persian Empire for a long time. The origin of many of its current inhabitants goes back to the period of Aryan",
+      description: b("description"),
     },
     {
-      title: "Samarkand",
+      title: s("title"),
       image: "/samarkand.jpg",
-      description:
-        "Samarkand is a city in southeastern Uzbekistan and one of the oldest inhabited cities in Central Asia. There are many historical and architectural sites in the city. The most famous of these is the Registan, a public square in the heart of the city, where three madrasahs of distinctive Islamic architecture are arranged around a plaza. The three madrasahs are: the Ulugh Beg Madrasah (15th century), the Tilya-Kori Madrasah (17th century), and the Sher-Dor Madrasah (17th century).",
+      description: s("description"),
     },
   ];
 
@@ -127,9 +128,7 @@ export default function Home() {
                 className="max-w-2xl mx-auto w-full flex flex-col gap-4 my-12"
                 id="contact-form"
               >
-                <h1 className="text-3xl text-center">
-                  Contact Us to Book a Tour
-                </h1>
+                <h1 className="text-3xl text-center">{t("title")}</h1>
                 <div className="flex flex-col md:flex-row gap-4">
                   <FormField
                     name="firstName"
@@ -137,11 +136,11 @@ export default function Home() {
                     render={({ field }) => {
                       return (
                         <FormItem className="flex-1">
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>{t("firstName")}</FormLabel>
                           <FormControl>
                             <Input
                               {...field}
-                              placeholder="First Name"
+                              placeholder={t("firstName")}
                               type="text"
                             />
                           </FormControl>
@@ -156,11 +155,11 @@ export default function Home() {
                     control={form.control}
                     render={({ field }) => (
                       <FormItem className="flex-1">
-                        <FormLabel>Last Name</FormLabel>
+                        <FormLabel>{t("lastName")}</FormLabel>
                         <FormControl>
                           <Input
                             {...field}
-                            placeholder="Last Name"
+                            placeholder={t("lastName")}
                             type="text"
                           />
                         </FormControl>
@@ -175,11 +174,11 @@ export default function Home() {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email Address</FormLabel>
+                      <FormLabel>{t("email")}</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="Email Address"
+                          placeholder={t("email")}
                           type="email"
                         />
                       </FormControl>
@@ -193,28 +192,32 @@ export default function Home() {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Message</FormLabel>
+                      <FormLabel>{t("message")}</FormLabel>
                       <FormControl>
-                        <Textarea rows={5} {...field} placeholder="Message" />
+                        <Textarea
+                          rows={5}
+                          {...field}
+                          placeholder={t("message")}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
                 <Button type="submit" className="w-full">
-                  Submit
+                  {t("submit")}
                 </Button>
               </form>
             ) : (
               <div className="flex flex-col items-center justify-center gap-4">
-                <h1 className="text-3xl">Thank you for your submission!</h1>
+                <h1 className="text-3xl">{t("confirmation")}</h1>
                 <Button
                   onClick={() => {
                     setIsSubmitted(false);
                     form.reset();
                   }}
                 >
-                  Submit another form
+                  {t("submitAnother")}
                 </Button>
               </div>
             )}

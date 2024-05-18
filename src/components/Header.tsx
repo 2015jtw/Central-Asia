@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import LanguageSelector from "./LanguageTranslator";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,8 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const t = useTranslations("Header");
 
   return (
     <header className="bg-white shadow-sm top-0">
@@ -68,7 +71,7 @@ const Header = () => {
             duration={500}
             className="text-sm leading-6 text-gray-900 cursor-pointer"
           >
-            Central Asia
+            {t("centralAsia")}
           </ScrollLink>
           <ScrollLink
             to="tours"
@@ -76,7 +79,7 @@ const Header = () => {
             duration={500}
             className="text-sm leading-6 text-gray-900 cursor-pointer"
           >
-            Tours
+            {t("tours")}
           </ScrollLink>
 
           <ScrollLink
@@ -85,20 +88,19 @@ const Header = () => {
             duration={500}
             className="text-sm leading-6 text-gray-900 cursor-pointer"
           >
-            About Us
+            {t("aboutUs")}
           </ScrollLink>
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <ScrollLink
             to="contact-form"
             smooth={true}
             duration={500}
             className="text-sm  leading-6 text-gray-900 cursor-pointer"
           >
-            Contact Us
+            {t("Contact")}
           </ScrollLink>
-
-          <LanguageSelector className="ml-3" />
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+          <LanguageSelector />
         </div>
       </nav>
 
@@ -157,7 +159,7 @@ const Header = () => {
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                 >
-                  Central Asia
+                  {t("centralAsia")}
                 </ScrollLink>
                 <ScrollLink
                   to="tours"
@@ -165,7 +167,7 @@ const Header = () => {
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                 >
-                  Tours
+                  {t("tours")}
                 </ScrollLink>
 
                 <ScrollLink
@@ -174,18 +176,18 @@ const Header = () => {
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                 >
-                  About Us
+                  {t("aboutUs")}
                 </ScrollLink>
-              </div>
-              <div className="py-6 flex flex-col w-full">
                 <ScrollLink
                   to="contact-form"
                   smooth={true}
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                 >
-                  Contact Us
+                  {t("Contact")}
                 </ScrollLink>
+              </div>
+              <div className="py-6 flex flex-col w-full">
                 <LanguageSelector />
               </div>
             </div>
