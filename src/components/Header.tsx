@@ -120,11 +120,18 @@ const Header = () => {
               className="-m-1.5 p-1.5 cursor-pointer"
             >
               <span className="sr-only">Your Company</span>
-              <Image
+              {/* <Image
                 className="h-8 w-auto"
                 src="/camel-icon.png"
                 width={80}
                 height={80}
+                alt="Central Asia Logo"
+              /> */}
+              <Image
+                className="h-8 w-auto"
+                src="/oak tree logo,tree best logo.png"
+                width={160}
+                height={160}
                 alt="Central Asia Logo"
               />
             </ScrollLink>
