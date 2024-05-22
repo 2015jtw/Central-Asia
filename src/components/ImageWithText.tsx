@@ -12,11 +12,9 @@ const ImageWithText = ({
     description: string;
     swap?: boolean;
 }) => {
-    // const textAlignmentClass = swap ? 'md:text-left' : 'md:text-right';
-
     return (
         <div
-            className={`w-full flex flex-col md:flex-row items-center justify-between bg-white py-4 my-4 ${
+            className={`w-full flex flex-col md:flex-row items-center justify-between bg-white ${
                 swap ? 'md:flex-row-reverse' : ''
             }`}
         >
@@ -27,17 +25,16 @@ const ImageWithText = ({
                     width={1500}
                     height={1000}
                     objectFit="cover"
-                    className="rounded"
                 />
             </div>
 
-            <div className={`w-full mt-4 md:mt-0 `}>
-                {/* <h2 className="md:px-10 text-3xl font-bold mb-2">{title}</h2>
-                <p className="md:px-10">{description}</p> */}
-                <h2 className="md:px-10 text-4xl sm:text-2xl font-bold mb-2">
+            <div className={`w-full my-4 md:mt-0 p-4 md:p-0`}>
+                <h4 className="md:px-10 text-4xl sm:text-2xl font-bold mb-2 text-center md:text-left">
                     {title}
-                </h2>
-                <p className="md:px-10 text-lg sm:text-sm">{description}</p>
+                </h4>
+                <p className="md:px-10 text-sm md:text-md xl:text-lg font-light">
+                    {description}
+                </p>
             </div>
         </div>
     );
