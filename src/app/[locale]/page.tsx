@@ -80,9 +80,9 @@ export default function Home() {
 
     const tourData = [
         {
-            title: k('title'),
-            image: '/khiva.jpg',
-            description: k('description'),
+            title: s('title'),
+            image: '/samarkand.jpg',
+            description: s('description'),
         },
         {
             title: b('title'),
@@ -90,9 +90,9 @@ export default function Home() {
             description: b('description'),
         },
         {
-            title: s('title'),
-            image: '/samarkand.jpg',
-            description: s('description'),
+            title: k('title'),
+            image: '/khiva.jpg',
+            description: k('description'),
         },
     ];
 
@@ -104,7 +104,7 @@ export default function Home() {
                 cta="Get in touch"
             />
             <CentralAsia />
-            <Wrapper>
+            <Wrapper className="p-8">
                 <div
                     id="tours"
                     className="text-black flex flex-col items-center"
@@ -124,7 +124,7 @@ export default function Home() {
                     </div>
                 </div>
             </Wrapper>
-            <Brands />
+
             <AboutUs />
             <Form {...form}>
                 <div className="bg-gradient-to-r from-yellow-300 to-orange-500">

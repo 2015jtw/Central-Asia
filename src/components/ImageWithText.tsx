@@ -25,6 +25,7 @@ const ImageWithText = ({
                     width={1500}
                     height={1000}
                     objectFit="cover"
+                    className="rounded"
                 />
             </div>
 

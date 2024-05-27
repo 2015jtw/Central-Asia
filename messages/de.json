@@ -1,9 +1,46 @@
 {
-    "HomepageCarousel": {
-      "title": "Eine Reise buchen",
-      "description": "Entdecken Sie mit unseren erfahrenen Reiseführern das Beste, was Usbekistan zu bieten hat. Wir bieten Touren nach Chiwa, Buchara und Samarkand an. Buchen Sie jetzt und sichern Sie sich Ihren Platz!",
-      "cta": "In Kontakt kommen"
-    }
+  "HomepageCarousel": {
+    "title": "Eine Reise buchen",
+    "description": "Entdecken Sie mit unseren erfahrenen Reiseführern das Beste, was Usbekistan zu bieten hat. Wir bieten Touren nach Tashkent, Samarkand, Chiwa, Buchara, und mehr an. Kontaktieren und sichern Sie sich Ihren Platz!",
+    "cta": "Kontaktieren"
+  },
+  "Header": {
+    "centralAsia": "Central Asia",
+    "tours": "Touren",
+    "AboutUs": "Über uns",
+    "Contact": "Kontaktiere uns"
+  },
+  "CentralAsia": {
+    "title": "Uzbekistan",
+    "subtitle": "Faszinierende Seidenstraße",
+    "description": "Seit zweitausend Jahren verbindet die Große Seidenstraße und Okzident, das Morgenland mit dem Abendland. Folgen Sie mit uns den alten Handelswegen zwischen China und dem Westen zu den alten Städten an der Seidenstraße, der prächtigen Architektur der Oasenstädte und zu den Basaren."
+  },
+  "Khiva": {
+    "title": "Traumhaftes Chiwa",
+    "description": "Überquellende Basare, Moscheen mit einmaligen Fayencen, eine jahrtausendalte Tradition und Menschen, die den Besucher als Gast sehen, sind die prägenden Eindrücke für den Besucher dieses wahrlich exotischen Landes. Einige Highlights, die man in Chiwa bei einer Usbekistan-Reise nicht versäumen darf: die alte Festung Kohne Ark, die Medrese Muhammed-Rahim-Khan II sowie die Medrese Amin Khan. Das Mausoleum Pachlavan Machmud mit seinen herrlichen, türkis-leuchtenden Kuppeln. Sensationell ist auch die Dschuma Moschee, die von Holzsäulen getragen wird. Chiwa ist eine Stadt für Träumer und Entdecker und für seine Besucher mit dem schönsten Beispiel eines Weltkulturerbes der UNESCO."
+  },
+  "Bukhara": {
+    "title": "Buchara - die Noble",
+    "description": "Das alte, heilige Buchara beherbergte über 350 Moscheen und 100 Religionschulen. Reisende aller Jahrhunderte rühmten Buchara, das auch den Namen Sherif, die Noble und die Edle, trägt, als einmalig in der islamischen Welt. Auch heute noch spürt der Besucher die große, islamische Vergangenheit: bunte Basare, lehmgeformte Häuser, Teehäuser und türkis-glänzende Kuppeln verdichten sich zur vollkommenen, orientalischen Atmosphäre. Ein Muss für einen Besuch sind: der Anblick der Zitadelle Ark, die Medrese Mir-e-Arab und Medrese Ulughbek, sowie die Medrese Nadir-Diwan-Bega, mit den blauen Reihern und die überkuppelten Basare."
+  },
+  "Samarkand": {
+    "title": "Samarkand - aus Märchen geboren",
+    "description": "Samarkand fasziniert seine Besucher durch orientalische Prachtbauten, zu denen auch das Wahrzeichen Usbekistans gehört: der von den drei Medresen Ulughbek, Tilla-kori und Schir-dar malerisch eingerahmte Registan-Platz. Nicht weit davon prangt die von Timur erbaute Bibi-Hanim Moschee, einst die größte und schönste des gesamten Morgenlandes. Die in Samarkand versammelten Zeugnisse timuridischer Baukunst, die Basare, Universitäten, Theater, Bibliotheken und Museen machen die stark traditionell geprägte Stadt zum “Paradis des Ostens”. Samarkand - ist das absolute Muss einer jeden Zentralasien-Tour."
+  },
+  "AboutUs": {
+    "title": "Touren und Service für Reiseveranstalter und Tour-Operator Gruppenreisen und Individual-Tours",
+    "description1": "Seit 2001 haben wir Gesamtrouten und Teilabschnitte mit erfahrenen Tour Operatoren und Reiseleitern für Sie ausgearbeitet.",
+    "description2": "Wir entdecken mit Ihnen gemeinsam die Dinge auch abseits der großen Routen und zeigen Ihnen das Land mit der touristischen Professionalität, die Ihnen das Reisen angenehm macht.",
+    "partner": "In Partnerschaft mit"
+  },
+  "ContactForm": {
+    "title": "Kontaktieren Sie uns, um eine Tour zu buchen",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "Email Adresse",
+    "message": "Mitteilung ",
+    "confirmation": "Vielen Dank für Ihre Einsendung!",
+    "submit": "Senden",
+    "submitAnother": "Senden Sie ein weiteres formular"
   }
-  
-  
+}

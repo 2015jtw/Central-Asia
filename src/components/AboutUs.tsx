@@ -28,6 +28,16 @@ const AboutUs = () => {
                         <p className="text-md font-light mt-4">
                             {t('description2')}
                         </p>
+                        <div className="mt-3">
+                            <h5 className="pb-3">{t('partner')}</h5>
+                            <Image
+                                src="/brand-image.png"
+                                alt="Company Logo 1"
+                                width={75}
+                                height={75}
+                                objectFit="contain"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
@@ -44,14 +54,6 @@ const AboutUs = () => {
                         {t('description2')}
                     </p>
                 </div>
-
-                <Image
-                    src="/uzbek-map-1.png"
-                    alt="Background image"
-                    layout="responsive"
-                    height={330}
-                    width={768}
-                />
             </section>
         </>
     );
