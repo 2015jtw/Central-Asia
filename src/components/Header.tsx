@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm top-0">
       <nav
-        className="mx-auto top-0 flex max-w-[80rem] items-center justify-between p-6 lg:px-8"
+        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-4 px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -30,11 +30,10 @@ const Header = () => {
           >
             <span className="sr-only">Your Company</span>
             <Image
-              className="h-8 w-auto"
-              src="/camel-icon.png"
+              src="/logo.png"
               alt="Central Asia Logo"
-              width={80}
-              height={80}
+              width={100}
+              height={100}
             />
           </ScrollLink>
         </div>
@@ -64,12 +63,12 @@ const Header = () => {
           )}
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-12 text-md">
           <ScrollLink
             to="central-asia"
             smooth={true}
             duration={500}
-            className="text-sm leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 cursor-pointer"
           >
             {t("centralAsia")}
           </ScrollLink>
@@ -77,7 +76,7 @@ const Header = () => {
             to="tours"
             smooth={true}
             duration={500}
-            className="text-sm leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 cursor-pointer"
           >
             {t("tours")}
           </ScrollLink>
@@ -86,7 +85,7 @@ const Header = () => {
             to="about-us"
             smooth={true}
             duration={500}
-            className="text-sm leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 cursor-pointer"
           >
             {t("AboutUs")}
           </ScrollLink>
@@ -94,7 +93,7 @@ const Header = () => {
             to="contact-form"
             smooth={true}
             duration={500}
-            className="text-sm  leading-6 text-gray-900 cursor-pointer"
+            className=" leading-6 text-gray-900 cursor-pointer"
           >
             {t("Contact")}
           </ScrollLink>
@@ -120,19 +119,12 @@ const Header = () => {
               className="-m-1.5 p-1.5 cursor-pointer"
             >
               <span className="sr-only">Your Company</span>
-              {/* <Image
-                className="h-8 w-auto"
-                src="/camel-icon.png"intt
-                width={80}
-                height={80}
-                alt="Central Asia Logo"
-              /> */}
+
               <Image
-                className="h-8 w-auto"
-                src="/oak tree logo,tree best logo.png"
-                width={160}
-                height={160}
+                src="/logo.png"
                 alt="Central Asia Logo"
+                width={120}
+                height={120}
               />
             </ScrollLink>
             <button
