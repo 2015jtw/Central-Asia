@@ -24,7 +24,6 @@ const Footer = () => {
           reserved.
         </p>
       </div>
-      test
     </footer>
   );
 };
