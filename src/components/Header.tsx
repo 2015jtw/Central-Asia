@@ -122,7 +122,7 @@ const Header = () => {
               <span className="sr-only">Your Company</span>
               {/* <Image
                 className="h-8 w-auto"
-                src="/camel-icon.png"
+                src="/camel-icon.png"intt
                 width={80}
                 height={80}
                 alt="Central Asia Logo"
