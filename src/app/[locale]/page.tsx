@@ -3,7 +3,6 @@
 //import shadcn/regular components
 import Header from "@/components/Header";
 import HomepageCarousel from "@/components/homepage-carousel";
-import TourCard from "@/components/tourCard";
 import MovingBanner from "@/components/moving-banner";
 import Wrapper from "@/components/Wrapper";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,6 @@ import {
 } from "@/components/ui/form";
 import ImageWithText from "@/components/ImageWithText";
 import CentralAsia from "@/components/CentralAsia";
-import Brands from "@/components/Brands";
 
 // form dependencies
 import { z } from "zod";
@@ -47,6 +45,7 @@ export default function Home() {
   const k = useTranslations("Khiva");
   const b = useTranslations("Bukhara");
   const s = useTranslations("Samarkand");
+  const kp = useTranslations("Karakalpakstan");
   const t = useTranslations("ContactForm");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
@@ -95,6 +94,11 @@ export default function Home() {
       title: k("title"),
       image: "/khiva.jpg",
       description: k("description"),
+    },
+    {
+      title: kp("title"),
+      image: "/karakalpakstan.jpg",
+      description: kp("description"),
     },
   ];
 

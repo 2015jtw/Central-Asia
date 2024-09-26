@@ -24,12 +24,12 @@ export default function MovingBanner() {
     <div className="w-full overflow-hidden ">
       <div className="flex animate-marquee">
         {duplicatedImages.map((src, index) => (
-          <div key={index} className="flex-shrink-0 w-[300px] p-2">
+          <div key={index} className="flex-shrink-0 w-[400px] p-2">
             <Image
               src={src}
               alt={`Banner image ${index + 1}`}
-              width={300}
-              height={200}
+              width={400}
+              height={300}
               className="rounded-lg shadow-md"
             />
           </div>

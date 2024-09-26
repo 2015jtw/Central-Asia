@@ -21,13 +21,19 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
       className="relative isolate flex items-center justify-center h-[600px]"
       id="homepage-carousel"
     >
+      {/* Background Image */}
       <Image
-        src="/federico-mata-e7WPAbCzGnw-unsplash.jpg"
+        src="/tim-de-groot-yNGQ830uFB4-unsplash.jpg"
         alt="Uzbekistan"
         fill
         objectFit="cover"
       />
-      <div className="mx-auto max-w-4xl w-full">
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-[#FF9F1C]/20"></div>
+
+      {/* Content */}
+      <div className="mx-auto max-w-4xl w-full relative z-10">
         <div className="relative mx-auto px-10 md:px-0 max-w-2xl">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">

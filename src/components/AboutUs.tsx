@@ -27,8 +27,8 @@ const AboutUs = () => {
               <Image
                 src="/lerndiee.png"
                 alt="Company Logo 1"
-                width={75}
-                height={75}
+                width={115}
+                height={1155}
                 objectFit="contain"
               />
             </div>
