@@ -22,7 +22,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
       id="homepage-carousel"
     >
       <Image
-        src="/tim-de-groot-yNGQ830uFB4-unsplash.jpg"
+        src="/federico-mata-e7WPAbCzGnw-unsplash.jpg"
         alt="Uzbekistan"
         fill
         objectFit="cover"
@@ -33,7 +33,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               {t("title")}
             </h1>
-            <p className="my-6 text-lg leading-8 text-white">
+            <p className="my-6 text-lg font-medium leading-8 text-white">
               {t("description")}
             </p>
             <Button>
