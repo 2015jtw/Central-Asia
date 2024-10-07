@@ -97,7 +97,7 @@ export default function Home() {
     },
     {
       title: kp("title"),
-      image: "/karakalpakstan.jpg",
+      image: "/karakalpakstan1.jpg",
       description: kp("description"),
     },
   ];
