@@ -30,7 +30,7 @@ const ImageWithText = ({
       </div>
 
       <div className={`w-full my-4 md:mt-0 p-4 md:p-0`}>
-        <h4 className="md:px-10 text-4xl sm:text-2xl font-bold mb-2 text-center md:text-left">
+        <h4 className="md:px-10 text-4xl sm:text-2xl font-bold mb-2 text-left">
           {title}
         </h4>
         <p className="md:px-10 text-sm md:text-md xl:text-lg font-light">

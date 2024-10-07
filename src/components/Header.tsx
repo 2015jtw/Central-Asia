@@ -16,7 +16,7 @@ const Header = () => {
   const t = useTranslations("Header");
 
   return (
-    <header className="bg-white shadow-sm top-0">
+    <header className="bg-white shadow-sm top-0 sticky z-50">
       <nav
         className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-4 px-8"
         aria-label="Global"
@@ -32,8 +32,8 @@ const Header = () => {
             <Image
               src="/logo.png"
               alt="Central Asia Logo"
-              width={100}
-              height={100}
+              width={75}
+              height={75}
             />
           </ScrollLink>
         </div>
