@@ -27,6 +27,7 @@ export default function MovingBanner() {
       if (firstImage) {
         firstImage.onload = () => {
           setIsReady(true);
+          console.log("isReady", isReady);
         };
       }
     }
