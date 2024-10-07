@@ -15,7 +15,7 @@ const images = [
 ];
 
 export default function MovingBanner() {
-  const [isReady, setIsReady] = useState(true);
+  const [isReady, setIsReady] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -26,7 +26,7 @@ export default function MovingBanner() {
 
       if (firstImage) {
         firstImage.onload = () => {
-          setIsReady(!true);
+          setIsReady(true);
         };
       }
     }
