@@ -131,13 +131,15 @@ export default function Home() {
 
       <AboutUs />
       <Form {...form}>
-        <div className="bg-gradient-to-r from-yellow-300 to-orange-500">
+        <div
+          className="bg-gradient-to-r from-yellow-300 to-orange-500"
+          id="contact-form"
+        >
           <Wrapper className="p-10">
             {!isSubmitted ? (
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="max-w-2xl mx-auto w-full flex flex-col gap-4 my-12"
-                id="contact-form"
               >
                 <h2 className="text-4xl text-center">{t("title")}</h2>
                 <div className="flex flex-col md:flex-row gap-4">

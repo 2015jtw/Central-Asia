@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm top-0 sticky z-50">
       <nav
-        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-4 px-8"
+        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-2 px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -157,6 +157,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  onClick={toggleMenu}
                 >
                   {t("centralAsia")}
                 </ScrollLink>
@@ -165,6 +166,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  onClick={toggleMenu}
                 >
                   {t("tours")}
                 </ScrollLink>
@@ -174,6 +176,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  onClick={toggleMenu}
                 >
                   {t("AboutUs")}
                 </ScrollLink>
@@ -182,6 +185,7 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  onClick={toggleMenu}
                 >
                   {t("Contact")}
                 </ScrollLink>
