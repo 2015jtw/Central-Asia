@@ -38,11 +38,11 @@ const AboutUs = () => {
       {/* MOBILE VERSION */}
       <section className="flex flex-col md:hidden " id="about-us">
         {/* Text Container */}
-        <div className="py-4 px-4 text-blackmt-4">
+        <div className="py-4 px-4 text-black my-4">
           <h4 className="text-3xl font-bold mb-4 text-center">{t("title")}</h4>
-          <p className="text-md font-light">{t("description1")}</p>
+          <p className="text-lg font-light">{t("description1")}</p>
           {/* add text about the founder */}
-          <p className="text-md font-light mt-4">{t("description2")}</p>
+          <p className="text-lg font-light mt-4">{t("description2")}</p>
         </div>
       </section>
     </>
