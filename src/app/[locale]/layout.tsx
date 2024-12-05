@@ -26,12 +26,13 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
   const defaultLocale = "de";
-  const messages = await getMessages({ locale: locale || defaultLocale });
+  const currentLocale = locale || defaultLocale;
+  const messages = await getMessages({ locale: currentLocale });
 
   return (
-    <html lang={locale}>
+    <html lang={currentLocale}>
       <body className={firaSans.className} suppressHydrationWarning={true}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={currentLocale} messages={messages}>
           <Header />
           {children}
           <Footer />
