@@ -39,7 +39,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               {t("title")}
             </h1>
-            <p className="my-6 text-lg font-medium leading-8 text-white">
+            <p className="my-6 text-lg font-normal leading-8 text-white">
               {t("description")}
             </p>
             <Button>

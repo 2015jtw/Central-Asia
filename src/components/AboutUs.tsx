@@ -21,7 +21,6 @@ const AboutUs = () => {
           <div className="absolute lg:max-w-4xl md:left-12 top-1/2 transform -translate-y-1/2 z-10 py-4 md:py-8 px-4 md:px-8 lg:px-10 text-black bg-white max-w-2xl shadow-lg rounded-lg">
             <h4 className="text-3xl font-normal mb-4">{t("title")}</h4>
             <p className="text-md font-light">{t("description1")}</p>
-            <p className="text-md font-light mt-4">{t("description2")}</p>
             <div className="mt-3">
               <h5 className="pb-3">{t("partner")}</h5>
               <Image
@@ -41,8 +40,6 @@ const AboutUs = () => {
         <div className="py-4 px-4 text-black my-4">
           <h4 className="text-3xl font-bold mb-4 text-center">{t("title")}</h4>
           <p className="text-lg font-light">{t("description1")}</p>
-          {/* add text about the founder */}
-          <p className="text-lg font-light mt-4">{t("description2")}</p>
         </div>
       </section>
     </>
