@@ -47,8 +47,19 @@ export const HomeForm = () => {
     console.log(values);
     setIsSubmitted(true);
 
+    const templateParams = {
+      from_name: `${values.firstName} ${values.lastName}`, // Sender's name
+      from_email: values.email, // Sender's email (this is the inputted email)
+      message: values.message, // Message content
+    };
+
     emailjs
-      .send("service_1i1zkm9", "template_3qvaw8b", values, "RpIH6mlkgSGMUpMPK")
+      .send(
+        "service_1i1zkm9",
+        "template_3qvaw8b",
+        templateParams,
+        "RpIH6mlkgSGMUpMPK"
+      )
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
