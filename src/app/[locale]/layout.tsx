@@ -4,8 +4,11 @@ import Head from "next/head";
 import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Central Asia Tours",
@@ -25,17 +28,16 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
-  const defaultLocale = "de";
-  const currentLocale = locale || defaultLocale;
-  console.log("Locale:", locale); // Debugging
-  console.log("Current Locale:", currentLocale); // Debugging
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
 
-  const messages = await getMessages({ locale: currentLocale });
+  const messages = await getMessages();
 
   return (
-    <html lang={currentLocale}>
+    <html lang={locale}>
       <body className={firaSans.className} suppressHydrationWarning={true}>
-        <NextIntlClientProvider locale={currentLocale} messages={messages}>
+        <NextIntlClientProvider messages={messages}>
           <Header />
           {children}
           <Footer />
