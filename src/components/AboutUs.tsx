@@ -11,8 +11,8 @@ const AboutUs = () => {
         <div className="relative h-[900px] md:h-[750px] w-full">
           <Image
             src="/uzbek-map-1.png"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: "cover" }}
             objectPosition="top right"
             alt="Background image"
             className="z-0"
