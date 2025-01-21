@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className="bg-white top-0 sticky z-50 shadow-lg border-b border-black">
       <nav
-        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-2 px-8"
+        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-2 px-8 md:px-20"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -89,17 +89,16 @@ const Header = () => {
           >
             {t("AboutUs")}
           </ScrollLink>
+        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
           <ScrollLink
             to="contact-form"
             smooth={true}
             duration={500}
-            className=" leading-6 text-gray-900 cursor-pointer"
+            className="leading 6text-gray-900 cursor-pointer"
           >
             {t("Contact")}
           </ScrollLink>
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
-          {/* <LanguageSelector /> */}
         </div>
       </nav>
 
@@ -180,18 +179,17 @@ const Header = () => {
                 >
                   {t("AboutUs")}
                 </ScrollLink>
+              </div>
+              <div className="py-6 flex flex-col w-full">
                 <ScrollLink
                   to="contact-form"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   {t("Contact")}
                 </ScrollLink>
-              </div>
-              <div className="py-6 flex flex-col w-full">
-                <LanguageSelector />
               </div>
             </div>
           </div>

@@ -14,7 +14,9 @@ const Footer = () => {
 
           <div className="flex items-center">
             <FontAwesomeIcon icon={faEnvelope} className="mr-2 h-4 w-4" />
-            <p className="mb-0">info@centralasia.de</p>
+            <a href="mailto:info@centralasia.de" className="mb-0">
+              info@centralasia.de
+            </a>
           </div>
         </div>
       </div>
