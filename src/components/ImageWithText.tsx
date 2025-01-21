@@ -16,7 +16,7 @@ const ImageWithText = ({
 }) => {
   return (
     <div
-      className={`w-full flex flex-col lg:flex-row items-center justify-between py-0 lg:py-8 bg-white ${
+      className={`w-full flex flex-col lg:flex-row items-center justify-between py-8 lg:py-16 bg-white ${
         swap ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -26,7 +26,7 @@ const ImageWithText = ({
           alt={title}
           width={1500}
           height={1000}
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           className="rounded"
         />
       </div>

@@ -12,8 +12,7 @@ const AboutUs = () => {
           <Image
             src="/uzbek-map-1.png"
             fill
-            style={{ objectFit: "cover" }}
-            objectPosition="top right"
+            style={{ objectFit: "cover", objectPosition: "top right" }}
             alt="Background image"
             className="z-0"
           />
@@ -28,7 +27,7 @@ const AboutUs = () => {
                 alt="Company Logo 1"
                 width={115}
                 height={1155}
-                objectFit="contain"
+                style={{ objectFit: "contain" }}
               />
             </div>
           </div>

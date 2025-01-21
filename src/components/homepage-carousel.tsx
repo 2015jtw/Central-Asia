@@ -26,7 +26,7 @@ const HomepageCarousel: React.FC<HomepageCarouselProps> = (props) => {
         src="/tim-de-groot-yNGQ830uFB4-unsplash.jpg"
         alt="Uzbekistan"
         fill
-        objectFit="cover"
+        style={{ objectFit: "cover" }}
       />
 
       {/* Gradient Overlay */}
