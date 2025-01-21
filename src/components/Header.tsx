@@ -16,7 +16,7 @@ const Header = () => {
   const t = useTranslations("Header");
 
   return (
-    <header className="bg-white shadow-sm top-0 sticky z-50">
+    <header className="bg-white top-0 sticky z-50 shadow-lg border-b border-black">
       <nav
         className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-2 px-8"
         aria-label="Global"
@@ -99,7 +99,7 @@ const Header = () => {
           </ScrollLink>
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
-          <LanguageSelector />
+          {/* <LanguageSelector /> */}
         </div>
       </nav>
 

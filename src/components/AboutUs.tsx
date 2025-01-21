@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 const AboutUs = () => {
   const t = useTranslations("AboutUs");
   return (
-    <>
+    <section id="about-us">
       {/* DESKTOP VERSION */}
-      <section className="hidden md:block relative" id="about-us">
+      <section className="hidden md:block relative">
         <div className="relative h-[900px] md:h-[750px] w-full">
           <Image
             src="/uzbek-map-1.png"
@@ -35,14 +35,14 @@ const AboutUs = () => {
         </div>
       </section>
       {/* MOBILE VERSION */}
-      <section className="flex flex-col md:hidden " id="about-us">
+      <section className="flex flex-col md:hidden py-10">
         {/* Text Container */}
         <div className="py-4 px-4 text-black my-4">
           <h4 className="text-3xl font-bold mb-4 text-center">{t("title")}</h4>
           <p className="text-lg font-light">{t("description1")}</p>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

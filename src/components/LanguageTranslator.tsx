@@ -34,7 +34,6 @@ const LanguageSelector = ({ className }: { className?: string }) => {
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="de">German</SelectItem>
-
         <SelectItem value="en">English</SelectItem>
       </SelectContent>
     </Select>
