@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import LanguageSelector from "./LanguageTranslator";
 import { useTranslations } from "next-intl";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const Header = () => {
   return (
     <header className="bg-white top-0 sticky z-50 shadow-lg border-b border-black">
       <nav
-        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-2 px-8 md:px-20"
+        className="mx-auto top-0 flex max-w-[85rem] items-center justify-between py-4 px-8 md:px-20"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -68,7 +69,7 @@ const Header = () => {
             to="central-asia"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 hover:text-amber-500 cursor-pointer"
           >
             {t("centralAsia")}
           </ScrollLink>
@@ -76,7 +77,7 @@ const Header = () => {
             to="tours"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500"
           >
             {t("tours")}
           </ScrollLink>
@@ -85,7 +86,7 @@ const Header = () => {
             to="about-us"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 cursor-pointer"
+            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500"
           >
             {t("AboutUs")}
           </ScrollLink>
@@ -97,7 +98,7 @@ const Header = () => {
             duration={500}
             className="leading 6text-gray-900 cursor-pointer"
           >
-            {t("Contact")}
+            <Button>{t("Contact")}</Button>
           </ScrollLink>
         </div>
       </nav>
@@ -155,7 +156,7 @@ const Header = () => {
                   to="central-asia"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   {t("centralAsia")}
@@ -164,7 +165,7 @@ const Header = () => {
                   to="tours"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   {t("tours")}
@@ -174,7 +175,7 @@ const Header = () => {
                   to="about-us"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base  leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                   onClick={toggleMenu}
                 >
                   {t("AboutUs")}
@@ -188,7 +189,7 @@ const Header = () => {
                   className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  {t("Contact")}
+                  <Button>{t("Contact")}</Button>
                 </ScrollLink>
               </div>
             </div>
