@@ -4,7 +4,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
-import Wrapper from "./Wrapper";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -72,17 +71,19 @@ export const HomeForm = () => {
 
   return (
     <Form {...form}>
-      <div
-        className="bg-gradient-to-r from-yellow-300 to-orange-500"
+      <section
+        className="bg-gradient-to-r from-yellow-300 to-orange-500 py-16 md:py-20"
         id="contact-form"
       >
-        <Wrapper className="p-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           {!isSubmitted ? (
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="max-w-2xl mx-auto w-full flex flex-col gap-4 my-12"
+              className="max-w-3xl mx-auto w-full flex flex-col gap-6"
             >
-              <h2 className="text-4xl text-center">{t("title")}</h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-900 mb-4">
+                {t("title")}
+              </h2>
               <div className="flex flex-col md:flex-row gap-4">
                 <FormField
                   name="firstName"
@@ -90,9 +91,16 @@ export const HomeForm = () => {
                   render={({ field }) => {
                     return (
                       <FormItem className="flex-1">
-                        <FormLabel>{t("firstName")}</FormLabel>
+                        <FormLabel className="text-base md:text-lg font-medium">
+                          {t("firstName")}
+                        </FormLabel>
                         <FormControl>
-                          <Input {...field} placeholder="John" type="text" />
+                          <Input 
+                            {...field} 
+                            placeholder="John" 
+                            type="text"
+                            className="text-base md:text-lg h-12"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -105,9 +113,16 @@ export const HomeForm = () => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>{t("lastName")}</FormLabel>
+                      <FormLabel className="text-base md:text-lg font-medium">
+                        {t("lastName")}
+                      </FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="Doe" type="text" />
+                        <Input 
+                          {...field} 
+                          placeholder="Doe" 
+                          type="text"
+                          className="text-base md:text-lg h-12"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -120,12 +135,15 @@ export const HomeForm = () => {
                 control={form.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("email")}</FormLabel>
+                    <FormLabel className="text-base md:text-lg font-medium">
+                      {t("email")}
+                    </FormLabel>
                     <FormControl>
                       <Input
                         {...field}
                         placeholder="john.doe@gmail.com"
                         type="email"
+                        className="text-base md:text-lg h-12"
                       />
                     </FormControl>
                     <FormMessage />
@@ -138,37 +156,46 @@ export const HomeForm = () => {
                 control={form.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("message")}</FormLabel>
+                    <FormLabel className="text-base md:text-lg font-medium">
+                      {t("message")}
+                    </FormLabel>
                     <FormControl>
                       <Textarea
-                        rows={5}
+                        rows={6}
                         {...field}
                         placeholder={t("message")}
+                        className="text-base md:text-lg resize-none"
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">
+              <Button 
+                type="submit" 
+                className="w-full mt-4 h-12 text-base md:text-lg font-semibold"
+              >
                 {t("submit")}
               </Button>
             </form>
           ) : (
-            <div className="flex flex-col items-center justify-center gap-4">
-              <h1 className="text-3xl">{t("confirmation")}</h1>
+            <div className="flex flex-col items-center justify-center gap-6 py-12 max-w-3xl mx-auto">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-gray-900">
+                {t("confirmation")}
+              </h1>
               <Button
                 onClick={() => {
                   setIsSubmitted(false);
                   form.reset();
                 }}
+                className="h-12 text-base md:text-lg px-8 font-semibold"
               >
                 {t("submitAnother")}
               </Button>
             </div>
           )}
-        </Wrapper>
-      </div>
+        </div>
+      </section>
     </Form>
   );
 };

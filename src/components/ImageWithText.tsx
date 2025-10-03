@@ -15,26 +15,47 @@ const ImageWithText = ({
   swap?: boolean;
 }) => {
   return (
-    <div
-      className={`w-full flex flex-col lg:flex-row items-center justify-between py-8 lg:py-16 bg-white ${
-        swap ? "lg:flex-row-reverse" : ""
-      }`}
-    >
-      <div className="w-full h-auto rounded px-4 lg:px-0">
-        <Image
-          src={image}
-          alt={title}
-          width={1500}
-          height={1000}
-          style={{ objectFit: "cover" }}
-          className="rounded"
-        />
-      </div>
+    <div className="py-8 md:py-12 first:pt-0">
+      <div
+        className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
+          swap ? "lg:grid-flow-dense" : ""
+        }`}
+      >
+        {/* Image Container */}
+        <div
+          className={`relative h-[400px] md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl ${
+            swap ? "lg:col-start-2" : ""
+          }`}
+        >
+          <Image
+            src={image}
+            alt={title}
+            fill
+            style={{ objectFit: "cover" }}
+            className="rounded-xl hover:scale-105 transition-transform duration-500"
+          />
+        </div>
 
-      <div className={`w-full my-0 lg:my-4 p-4 lg:p-0`}>
-        <h4 className="lg:px-10 text-2xl font-bold mb-2 text-left">{title}</h4>
-        <p className="lg:px-10 text-lg font-light pb-4">{description}</p>
-        <p className="lg:px-10 text-lg font-light">{description2}</p>
+        {/* Text Container */}
+        <div
+          className={`space-y-6 px-4 md:px-8 lg:px-0 ${
+            swap ? "lg:col-start-1 lg:row-start-1 lg:pr-8" : "lg:pl-8"
+          }`}
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            {title}
+          </h2>
+          <div className="space-y-4 text-gray-700">
+            <p className="text-lg md:text-xl font-light leading-relaxed">
+              {description}
+            </p>
+            {description2 && (
+              <p className="text-lg md:text-xl font-light leading-relaxed">
+                {description2}
+              </p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

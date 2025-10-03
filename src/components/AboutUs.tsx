@@ -5,42 +5,44 @@ import { useTranslations } from "next-intl";
 const AboutUs = () => {
   const t = useTranslations("AboutUs");
   return (
-    <section id="about-us">
-      {/* DESKTOP VERSION */}
-      <section className="hidden md:block relative">
-        <div className="relative h-[900px] md:h-[750px] w-full">
-          <Image
-            src="/uzbek-map-1.png"
-            fill
-            style={{ objectFit: "cover", objectPosition: "top right" }}
-            alt="Background image"
-            className="z-0"
-          />
-          {/* Text Container */}
-          <div className="absolute lg:max-w-4xl md:left-12 top-1/2 transform -translate-y-1/2 z-10 py-4 md:py-8 px-4 md:px-8 lg:px-10 text-black bg-white max-w-2xl shadow-lg rounded-lg">
-            <h4 className="text-3xl font-normal mb-4">{t("title")}</h4>
-            <p className="text-md font-light">{t("description1")}</p>
-            <div className="mt-3">
-              <h5 className="pb-3">{t("partner")}</h5>
-              <Image
-                src="/lerndiee.png"
-                alt="Company Logo 1"
-                width={115}
-                height={1155}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
+    <section id="about-us" className="relative h-screen flex items-center">
+      {/* Full Background Map */}
+      <Image
+        src="/uzbek-map.png"
+        fill
+        style={{ objectFit: "cover", objectPosition: "20% center" }}
+        alt="Map of Uzbekistan"
+        className="brightness-75"
+      />
+      
+      {/* Overlay gradient for better card visibility */}
+      <div className="absolute inset-0 bg-black/20"></div>
+
+      {/* Content Card - Left Aligned */}
+      <div className="relative z-10 ml-4 md:ml-12 lg:ml-20 mr-4 max-w-2xl">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10 lg:p-12 space-y-6">
+          <h4 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            {t("title")}
+          </h4>
+          
+          <p className="text-base md:text-lg font-light text-gray-700 leading-relaxed">
+            {t("description1")}
+          </p>
+          
+          <div className="pt-4 border-t border-gray-200">
+            <h5 className="text-lg md:text-xl font-semibold mb-4 text-gray-800">
+              {t("partner")}
+            </h5>
+            <Image
+              src="/lerndiee.png"
+              alt="Lernidee Partner Logo"
+              width={150}
+              height={150}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
-      </section>
-      {/* MOBILE VERSION */}
-      <section className="flex flex-col md:hidden py-10">
-        {/* Text Container */}
-        <div className="py-4 px-4 text-black my-4">
-          <h4 className="text-3xl font-bold mb-4 text-center">{t("title")}</h4>
-          <p className="text-lg font-light">{t("description1")}</p>
-        </div>
-      </section>
+      </div>
     </section>
   );
 };

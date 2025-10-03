@@ -27,7 +27,7 @@ const LanguageSelector = ({ className }: { className?: string }) => {
 
   return (
     <Select onValueChange={onSelectChange}>
-      <SelectTrigger className="w-[180px]">
+      <SelectTrigger className="w-[120px]">
         <SelectValue
           placeholder={localActive === "de" ? "German" : "English"}
         />

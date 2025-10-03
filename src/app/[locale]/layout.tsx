@@ -1,7 +1,6 @@
 // React/Next
 import type { Metadata } from "next";
 import { Inter, Fira_Sans } from "next/font/google";
-import Head from "next/head";
 import "../globals.css";
 
 // UI
@@ -27,11 +26,12 @@ const firaSans = Fira_Sans({
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }

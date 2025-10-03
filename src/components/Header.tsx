@@ -64,12 +64,12 @@ const Header = () => {
           )}
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-12 text-md">
+        <div className="hidden lg:flex lg:gap-x-12 text-lg font-medium">
           <ScrollLink
             to="central-asia"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 hover:text-amber-500 cursor-pointer"
+            className="leading-6 text-gray-900 hover:text-amber-500 cursor-pointer transition-colors duration-200"
           >
             {t("centralAsia")}
           </ScrollLink>
@@ -77,7 +77,7 @@ const Header = () => {
             to="tours"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500"
+            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500 transition-colors duration-200"
           >
             {t("tours")}
           </ScrollLink>
@@ -86,19 +86,22 @@ const Header = () => {
             to="about-us"
             smooth={true}
             duration={500}
-            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500"
+            className="leading-6 text-gray-900 cursor-pointer hover:text-amber-500 transition-colors duration-200"
           >
             {t("AboutUs")}
           </ScrollLink>
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+          <LanguageSelector />
           <ScrollLink
             to="contact-form"
             smooth={true}
             duration={500}
-            className="leading 6text-gray-900 cursor-pointer"
+            className="cursor-pointer"
           >
-            <Button>{t("Contact")}</Button>
+            <Button size="lg" className="text-base font-semibold">
+              {t("Contact")}
+            </Button>
           </ScrollLink>
         </div>
       </nav>
@@ -156,7 +159,7 @@ const Header = () => {
                   to="central-asia"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-3 text-lg font-medium hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   {t("centralAsia")}
@@ -165,7 +168,7 @@ const Header = () => {
                   to="tours"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-3 text-lg font-medium hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   {t("tours")}
@@ -175,7 +178,7 @@ const Header = () => {
                   to="about-us"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="-mx-3 block rounded-lg px-3 py-3 text-lg font-medium hover:text-amber-500 leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer transition-colors duration-200"
                   onClick={toggleMenu}
                 >
                   {t("AboutUs")}
@@ -186,10 +189,12 @@ const Header = () => {
                   to="contact-form"
                   smooth={true}
                   duration={500}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer"
+                  className="cursor-pointer"
                   onClick={toggleMenu}
                 >
-                  <Button>{t("Contact")}</Button>
+                  <Button size="lg" className="w-full text-base font-semibold">
+                    {t("Contact")}
+                  </Button>
                 </ScrollLink>
               </div>
             </div>

@@ -15,48 +15,43 @@ const images = [
 ];
 
 export default function MovingBanner() {
-  const [isReady, setIsReady] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null);
 
   useEffect(() => {
+    let singleImageWidth = 0;
+
+    // Calculate the width of a single image set
     if (containerRef.current) {
       const container = containerRef.current;
-      const firstImage = container.querySelector("img");
-
-      if (firstImage) {
-        firstImage.onload = () => {
-          setIsReady(true);
-          console.log("isReady", isReady);
-        };
+      const firstChild = container.firstElementChild as HTMLElement;
+      if (firstChild) {
+        // Width of one image including padding (400px + padding)
+        singleImageWidth = images.length * 416; // 400px width + 16px padding (p-2 = 8px on each side)
       }
     }
+
+    const animate = () => {
+      setScrollPosition((prevPosition) => {
+        const newPosition = prevPosition + 1;
+        // Reset when we've scrolled through one complete set of images
+        if (newPosition >= singleImageWidth) {
+          return 0;
+        }
+        return newPosition;
+      });
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, []);
-
-  useEffect(() => {
-    if (isReady && containerRef.current) {
-      const container = containerRef.current;
-      const totalWidth = container.scrollWidth;
-      const viewportWidth = container.offsetWidth;
-
-      const animate = () => {
-        setScrollPosition((prevPosition) => {
-          const newPosition = prevPosition + 1;
-          if (newPosition >= totalWidth / 2) {
-            return 0;
-          }
-          return newPosition;
-        });
-        requestAnimationFrame(animate);
-      };
-
-      const animationFrame = requestAnimationFrame(animate);
-
-      return () => {
-        cancelAnimationFrame(animationFrame);
-      };
-    }
-  }, [isReady]);
 
   return (
     <div className="w-full overflow-hidden">
@@ -64,12 +59,12 @@ export default function MovingBanner() {
         ref={containerRef}
         className="flex"
         style={{
-          opacity: isReady ? 1 : 0,
-          transition: "opacity 0.5s ease-in-out",
           transform: `translateX(-${scrollPosition}px)`,
+          willChange: "transform",
         }}
       >
-        {[...images, ...images, ...images].map((src, index) => (
+        {/* Duplicate images twice for seamless infinite scroll */}
+        {[...images, ...images].map((src, index) => (
           <div key={index} className="flex-shrink-0 w-[400px] p-2">
             <Image
               src={src}
@@ -77,6 +72,7 @@ export default function MovingBanner() {
               width={400}
               height={300}
               className="rounded-lg shadow-md"
+              priority={index < images.length}
             />
           </div>
         ))}
