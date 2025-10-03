@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -25,7 +25,10 @@ const formSchema = z.object({
   message: z.string().min(10).max(500),
 });
 
-emailjs.init("RpIH6mlkgSGMUpMPK");
+// Initialize EmailJS with your public key
+if (typeof window !== "undefined") {
+  emailjs.init("RpIH6mlkgSGMUpMPK");
+}
 
 export const HomeForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
