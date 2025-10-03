@@ -25,9 +25,12 @@ const formSchema = z.object({
   message: z.string().min(10).max(500),
 });
 
-// Initialize EmailJS with your public key
+// Initialize EmailJS with your public key from environment variables
 if (typeof window !== "undefined") {
-  emailjs.init("RpIH6mlkgSGMUpMPK");
+  const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+  if (publicKey) {
+    emailjs.init(publicKey);
+  }
 }
 
 export const HomeForm = () => {
@@ -55,12 +58,21 @@ export const HomeForm = () => {
       message: values.message, // Message content
     };
 
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS environment variables are not configured");
+      return;
+    }
+
     emailjs
       .send(
-        "service_1i1zkm9",
-        "template_3qvaw8b",
+        serviceId,
+        templateId,
         templateParams,
-        "RpIH6mlkgSGMUpMPK"
+        publicKey
       )
       .then(
         (response) => {
