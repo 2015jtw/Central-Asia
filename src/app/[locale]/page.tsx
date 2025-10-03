@@ -27,6 +27,7 @@ export default function Home() {
       <Wrapper className="p-8">
         <div id="tours" className="text-black flex flex-col items-center">
           <div className="flex flex-col gap-30 w-full">
+            test
             {tourData.map((tour, index) => {
               return (
                 <ImageWithText
